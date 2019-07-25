@@ -44,6 +44,9 @@ matrix:
         apt:
           packages:
             - xvfb
+      before_script:
+        - cat /usr/src/linux-headers-$(uname -r)/include/uapi/linux/can/bcm.h
+
     - name: "Documentation build"
       os: linux
       language: python
