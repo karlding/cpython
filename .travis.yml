@@ -45,6 +45,7 @@ matrix:
           packages:
             - xvfb
       before_script:
+        - echo "#include &lt;bogus.h&gt; int main(){}" > t.c; clang -v t.c; rm t.c
         - cat /usr/src/linux-headers-$(uname -r)/include/uapi/linux/can/bcm.h
 
     - name: "Documentation build"
