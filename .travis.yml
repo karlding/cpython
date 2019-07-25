@@ -45,7 +45,12 @@ matrix:
           packages:
             - xvfb
       before_script:
-        - echo "#include <bogus.h> int main(){}" > t.c; clang -v t.c; rm t.c
+        #        - echo "#include <bogus.h> int main(){}" > t.c; clang -v t.c; rm t.c
+        - cd /usr/local/include && find -iname 'bcm.h' || true
+        - cd /usr/local/clang-7.0.0/lib/clang/7.0.0/include && find -iname 'bcm.h' || true
+        - cd /usr/include/x86_64-linux-gnu && find -iname 'bcm.h' || true
+        - cd /usr/include && find -iname 'bcm.h' || true
+
         - cat /usr/src/linux-headers-$(uname -r)/include/uapi/linux/can/bcm.h
 
     - name: "Documentation build"
