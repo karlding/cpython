@@ -51,6 +51,7 @@ matrix:
         - cd /usr/include/x86_64-linux-gnu && find -iname 'bcm.h' || true
         - cd /usr/include && find -iname 'bcm.h' || true
         - cat /usr/include/linux/can/bcm.h
+        - ls -lha /usr/include/linux/can/bcm.h
 
         - cat /usr/src/linux-headers-$(uname -r)/include/uapi/linux/can/bcm.h
 
