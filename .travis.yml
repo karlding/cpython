@@ -55,6 +55,7 @@ matrix:
         - ls -lha /usr/include/linux
         - ls -lha /usr/include
         - cat /usr/include/linux/can/bcm.h
+        - ld --version
 
         - cat /usr/src/linux-headers-$(uname -r)/include/uapi/linux/can/bcm.h
 
